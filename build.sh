@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t nxswesolowski/ubuntu-php7 .
+docker build -t nxswesolowski/ubuntu-php:7.0 .
