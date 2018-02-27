@@ -15,10 +15,3 @@ cp /opt/docker/scripts/files/servername.conf /etc/apache2/conf-available/servern
 ln -s ../conf-available/servername.conf /etc/apache2/conf-enabled/servername.conf
 
 chown docker:docker /home/docker/.bash_aliases
-
-echo "instal Blackfire"
-wget -O - https://packagecloud.io/gpg.key | sudo apt-key add -
-echo "deb http://packages.blackfire.io/debian any main" | sudo tee /etc/apt/sources.list.d/blackfire.list
-sudo apt-get update
-sudo apt-get install blackfire-agent
-sudo apt-get install blackfire-php
