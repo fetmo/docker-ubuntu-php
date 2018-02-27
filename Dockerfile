@@ -1,4 +1,4 @@
-FROM nxswesolowski/ubuntu-php56
+FROM nxswesolowski/ubuntu-php:5.6
 MAINTAINER Rafal Wesolowski <wesolowski@nexus-netsoft.com>
 
 ADD .docker/scripts /opt/docker/scripts

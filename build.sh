@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t nxswesolowski/ubuntu-php56-elasticsearch .
+docker build -t nxswesolowski/ubuntu-php:5.6-elasticsearch .
