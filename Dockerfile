@@ -15,5 +15,8 @@ RUN wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/dis
 ADD .docker/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
 ADD .docker/elasticsearch/logging.yml /var/log/elasticsearch/logging.yml
 
+RUN /usr/share/elasticsearch/bin/plugin install mobz/elasticsearch-head
+RUN /usr/share/elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/2.0
+
 EXPOSE 9200 9300
 CMD ["supervisord", "-n"]
