@@ -14,5 +14,12 @@ RUN /opt/docker/scripts/prepare-server.sh \
 
 ADD .docker/php/conf.d /etc/php/7.0/apache2/conf.d
 
+# Install composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+ && php composer-setup.php \
+ && php -r "unlink('composer-setup.php');" \
+ && mv composer.phar /usr/local/bin/composer \
+ && chmod +x /usr/local/bin/composer
+ 
 EXPOSE 9000
 CMD ["supervisord", "-n"]

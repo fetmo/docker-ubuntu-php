@@ -15,9 +15,9 @@ cp /opt/docker/scripts/files/00-ioncube.ini /etc/php/7.0/cli/conf.d/00-ioncube.i
 echo ""
 echo "phpunit"
 
-wget https://phar.phpunit.de/phpunit.phar
-chmod +x phpunit.phar
-sudo mv phpunit.phar /usr/local/bin/phpunit
+wget -O phpunit https://phar.phpunit.de/phpunit-6.phar
+chmod +x phpunit
+sudo mv phpunit /usr/local/bin/phpunit
 phpunit --version
 
 echo ""
