@@ -1,4 +1,5 @@
 FROM nxswesolowski/ubuntu-php:5.6
+
 MAINTAINER Rafal Wesolowski <wesolowski@nexus-netsoft.com>
 
 ADD .docker/scripts /opt/docker/scripts
@@ -15,8 +16,17 @@ RUN wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/dis
 ADD .docker/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
 ADD .docker/elasticsearch/logging.yml /var/log/elasticsearch/logging.yml
 
+
 RUN /usr/share/elasticsearch/bin/plugin install mobz/elasticsearch-head
 RUN /usr/share/elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/2.0
 
+# Install composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+ && php composer-setup.php \
+ && php -r "unlink('composer-setup.php');" \
+ && mv composer.phar /usr/local/bin/composer \
+ && chmod +x /usr/local/bin/composer
+
 EXPOSE 9200 9300
+
 CMD ["supervisord", "-n"]
