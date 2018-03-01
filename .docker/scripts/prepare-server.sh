@@ -14,9 +14,9 @@ echo ""
 echo "phpunit"
 
 
-sudo mv phpunit-5.7.phar phpunit.phar
-chmod +x phpunit.phar
-sudo mv phpunit.phar /usr/local/bin/phpunit
+wget -O phpunit https://phar.phpunit.de/phpunit-5.phar
+chmod +x phpunit
+sudo mv phpunit /usr/local/bin/phpunit
 phpunit --version
 
 echo ""
