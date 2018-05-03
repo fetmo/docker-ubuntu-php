@@ -8,7 +8,7 @@ echo "add user docker to sudo-group"
 usermod -a -G sudo docker
 
 echo "copy config files"
-cp /opt/docker/scripts/files/xdebug.ini /etc/php/7.0/mods-available/xdebug.ini
+cp /opt/docker/scripts/files/xdebug.ini /etc/php/7.2/mods-available/xdebug.ini
 sudo cp /opt/docker/scripts/files/.bash_aliases /home/docker/.bash_aliases
 sudo chown -Rf www-data:www-data /home/docker/.bash_aliases
 sudo cp /opt/docker/scripts/files/.bash_aliases /home/nexus/.bash_aliases
