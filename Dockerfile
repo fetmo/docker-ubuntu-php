@@ -4,7 +4,7 @@ MAINTAINER Rafal Wesolowski <wesolowski@nexus-netsoft.com>
 ADD .docker/scripts /opt/docker/scripts
 
 RUN LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php \
-&& apt-get update && apt-get -y --force-yes install php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-gd php7.0-bz2 php7.0-mbstring php7.0-zip php7.0-memcached php7.0-xml php7.0-intl php7.0-xsl php7.0-soap php7.0-bcmath  \
+&& apt-get update && apt-get -y --force-yes install php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-gd php7.0-bz2 php7.0-mbstring php7.0-zip php7.0-memcached php7.0-xml php7.0-intl php7.0-xsl php7.0-soap php7.0-bcmath php-redis \
 && a2enmod php7.0 \
 && a2enconf php7.0-fpm \
 && apt-get -y clean
