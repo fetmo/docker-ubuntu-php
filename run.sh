@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker stop php72
-docker rm php72
-docker run --name php72 -d -p 80:80 -p 2222:22 -p 3306:3306 nxswesolowski/ubuntu-php:7.2
+docker stop php74
+docker rm php74
+docker run --name php74 -d -p 81:80 -p 2222:22 -p 3307:3306 nxsjung/ubuntu-php:7.4
